@@ -1,4 +1,6 @@
-let timeLeft = 25 * 60;
+// Edit 3: Updated default duration to 50 minutes
+const DEFAULT_TIME = 50 * 60;
+let timeLeft = DEFAULT_TIME;
 let timerId = null;
 
 const timerDisplay = document.getElementById('timer');
@@ -17,6 +19,8 @@ function updateDisplay() {
 
 startBtn.addEventListener('click', () => {
   if (timerId === null) {
+    // Edit 5: Disable Start button while running
+    startBtn.disabled = true;
     timerId = setInterval(() => {
       if (timeLeft > 0) {
         timeLeft--;
@@ -24,6 +28,7 @@ startBtn.addEventListener('click', () => {
       } else {
         clearInterval(timerId);
         timerId = null;
+        startBtn.disabled = false;
       }
     }, 1000);
   }
@@ -32,18 +37,24 @@ startBtn.addEventListener('click', () => {
 pauseBtn.addEventListener('click', () => {
   clearInterval(timerId);
   timerId = null;
+  startBtn.disabled = false;
 });
 
 resetBtn.addEventListener('click', () => {
   clearInterval(timerId);
   timerId = null;
-  timeLeft = 25 * 60;
+  startBtn.disabled = false;
+  timeLeft = DEFAULT_TIME;
   updateDisplay();
 });
 
 addBtn.addEventListener('click', () => {
+  // Edit 4: Prevent empty task submissions
+  const text = todoInput.value.trim();
+  if (!text) return;
+
   const li = document.createElement('li');
-  li.textContent = todoInput.value;
+  li.textContent = text;
   todoList.appendChild(li);
   todoInput.value = '';
 });

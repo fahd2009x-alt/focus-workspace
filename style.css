@@ -1,7 +1,8 @@
+/* Edit 1: Dark slate theme with crimson accents */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  font-family: 'Inter', sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
   display: flex;
   justify-content: center;
   padding-top: 60px;
@@ -9,23 +10,49 @@ body {
 }
 
 .container {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 360px;
+  background: #1e293b;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  width: 380px;
   text-align: center;
+  border: 1px solid #334155;
 }
 
+/* Edit 2: Monospace font prevents horizontal jitter */
 #timer {
-  font-size: 48px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 56px;
+  color: #ef4444;
   margin: 20px 0;
 }
 
 .controls button, .task-input button {
-  padding: 8px 14px;
+  background-color: #dc2626;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
   margin: 4px;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Edit 5: Interactive hover, active, and disabled states */
+.controls button:hover, .task-input button:hover {
+  background-color: #b91c1c;
+}
+
+.controls button:active, .task-input button:active {
+  transform: scale(0.96);
+}
+
+.controls button:disabled {
+  background-color: #475569;
+  color: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .task-input {
@@ -36,7 +63,11 @@ body {
 
 .task-input input {
   flex: 1;
-  padding: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #f8fafc;
 }
 
 #todo-list {
@@ -46,6 +77,9 @@ body {
 }
 
 #todo-list li {
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  background: #0f172a;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  border-left: 3px solid #dc2626;
 }
