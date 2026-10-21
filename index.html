@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Workspace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Focus Timer</h1>
+    <div id="timer">25:00</div>
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn">Pause</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+
+    <div class="task-section">
+      <h2>Tasks</h2>
+      <div class="task-input">
+        <input type="text" id="todo-input" placeholder="Add a new task...">
+        <button id="add-btn">Add</button>
+      </div>
+      <ul id="todo-list"></ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
