@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Focus Workspace</title>
-  <!-- Edit 2: Import JetBrains Mono -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h1>Focus Timer</h1>
-    <!-- Edit 3: Default interval changed to 50:00 -->
+    
+    <!-- ميزة جديدة: خانة لتحديد الدقائق بالمزاج -->
+    <div class="timer-config">
+      <input type="number" id="custom-mins" value="50" min="1" max="180">
+      <button id="set-time-btn">Set Mins</button>
+    </div>
+
     <div id="timer">50:00</div>
     <div class="controls">
       <button id="start-btn">Start</button>
@@ -25,6 +30,14 @@
         <input type="text" id="todo-input" placeholder="Add a new task...">
         <button id="add-btn">Add</button>
       </div>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+        <button id="clear-completed-btn">Clear Done</button>
+      </div>
+
       <ul id="todo-list"></ul>
     </div>
   </div>

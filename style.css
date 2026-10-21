@@ -1,4 +1,3 @@
-/* Edit 1: Dark slate theme with crimson accents */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #0f172a;
@@ -14,17 +13,51 @@ body {
   padding: 28px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  width: 380px;
+  width: 390px;
   text-align: center;
   border: 1px solid #334155;
 }
 
-/* Edit 2: Monospace font prevents horizontal jitter */
+/* تنسيق خانة تحديد الدقائق */
+.timer-config {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.timer-config input {
+  width: 80px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #f8fafc;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+}
+
+.timer-config button {
+  background-color: #334155;
+  color: #f8fafc;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.timer-config button:hover {
+  background-color: #475569;
+}
+
 #timer {
   font-family: 'JetBrains Mono', monospace;
   font-size: 56px;
   color: #ef4444;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .controls button, .task-input button {
@@ -39,7 +72,6 @@ body {
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-/* Edit 5: Interactive hover, active, and disabled states */
 .controls button:hover, .task-input button:hover {
   background-color: #b91c1c;
 }
@@ -58,7 +90,7 @@ body {
 .task-input {
   display: flex;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .task-input input {
@@ -68,6 +100,29 @@ body {
   border: 1px solid #334155;
   background: #0f172a;
   color: #f8fafc;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.filters button {
+  flex: 1;
+  background: #0f172a;
+  color: #94a3b8;
+  border: 1px solid #334155;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.filters button.active {
+  border-color: #dc2626;
+  color: #ffffff;
 }
 
 #todo-list {
@@ -82,4 +137,13 @@ body {
   margin-bottom: 6px;
   border-radius: 6px;
   border-left: 3px solid #dc2626;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+#todo-list li.completed {
+  text-decoration: line-through;
+  color: #64748b;
+  border-left-color: #475569;
 }
